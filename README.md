@@ -7,7 +7,7 @@ Dockerhub: docker push golangbuddy/test-project:tagname
 
 TODO:
 
-1. Add a CI skeleton.
+1. <strikethrough>Add a CI skeleton.</strikethrough>
 2. Add basic linting.
 3. Add secret-scanning.
 4. Add makefile.
