@@ -1,7 +1,8 @@
 FROM golang:1.18 as build
 WORKDIR /go/src/app
 COPY . .
-RUN mkdir -p /go/bin && go build -ldflags="-w -s" -o /go/bin/app ./...
+# Static build requires CGO_ENABLED=0
+RUN mkdir -p /go/bin && CGO_ENABLED=0 go build -ldflags="-w -s" -o /go/bin/app ./...
 
 # Using a distroless image from https://github.com/GoogleContainerTools/distroless
 # Image sourced from https://console.cloud.google.com/gcr/images/distroless/global/static
