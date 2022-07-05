@@ -1,0 +1,22 @@
+# This is a required setting, and should be a string that is used as the main title for the project documentation.
+site_name: Golang Buddies
+
+# Set the canonical URL of the site. This will add a link tag with the canonical URL to the head section of each HTML page.
+# https://www.mkdocs.org/user-guide/configuration/#site_url
+# site_url:
+#
+# When set, provides a link to your repository (GitHub, Bitbucket, GitLab, ...) on each page.
+# repo_url
+
+site_description: Some awesome site
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
