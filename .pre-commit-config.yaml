@@ -12,6 +12,10 @@ repos:
     rev: v1.46.2
     hooks:
       - id: golangci-lint
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.8.11
+    hooks:
+      - id: gitleaks
 
 ci:
   autofix_commit_msg: |
