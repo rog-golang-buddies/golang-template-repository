@@ -1,6 +1,6 @@
 name: dockerBuildAndPush
 on:
-  [push]
+  [pull_request, push, workflow_dispatch]
 jobs:
   docker:
     runs-on: ubuntu-latest
