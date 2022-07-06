@@ -11,3 +11,14 @@ COPY --from=build /go/bin/app /
 # numeric version of user nonroot:nonroot provided in image
 USER 65532:65532
 CMD ["/app"]
+
+ARG TAG
+ARG GIT_SHA
+ARG GIT_DESCRIBE
+ARG BUILD_DATE
+ARG SRC_REPO
+LABEL TAG=$TAG \
+  GIT_SHA=$GIT_SHA \
+  GIT_DESCRIBE=$GIT_DESCRIBE \
+  BUILD_DATE=$BUILD_DATE \
+  SRC_REPO=$SRC_REPO
