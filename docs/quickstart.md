@@ -2,7 +2,7 @@
 
 Provides the CI setup and local development instructions to optimally use this repository.
 
-> 🚀 Instructions are distilled to get you started with the least amount of effort. Highly recommend reading background information for context in the provided links.
+> 🚀 Instructions are distilled to get you started with the least amount of effort. Highly recommend reading background information for context in the provided links and further information.
 
 
 ### Install developer tools
