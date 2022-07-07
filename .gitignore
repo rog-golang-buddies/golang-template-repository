@@ -15,3 +15,7 @@
 # vendor/
 
 bin/
+
+# code editor personal settings
+.vscode/
+.idea/

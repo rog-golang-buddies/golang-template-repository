@@ -1,13 +1,27 @@
-FROM golang:1.18 as build
-WORKDIR /go/src/app
+FROM golang:1.18.3-alpine3.16 as builder
+
+# install make
+RUN apk update && apk upgrade && \
+    apk add --no-cache make
+
+WORKDIR /src
 COPY . .
-# Static build requires CGO_ENABLED=0
-RUN mkdir -p /go/bin && CGO_ENABLED=0 go build -ldflags="-w -s" -o /go/bin/app ./...
+
+# build executable
+RUN make build
 
 # Using a distroless image from https://github.com/GoogleContainerTools/distroless
-# Image sourced from https://console.cloud.google.com/gcr/images/distroless/global/static
 FROM gcr.io/distroless/static:nonroot
-COPY --from=build /go/bin/app /
+
+# copy executable from builder image to final images
+COPY --from=build /src/bin/app /
+
 # numeric version of user nonroot:nonroot provided in image
 USER 65532:65532
+
+# run the executable
 CMD ["/app"]
+
+# optionally expose a port
+ENV PORT=8000
+EXPOSE $PORT
