@@ -1,7 +1,7 @@
 SHELL=/bin/bash -e -o pipefail
 PWD = $(shell pwd)
 GO_BUILD= go build
-GOFLAGS= GOOS=linux CGO_ENABLED=0
+GOFLAGS= CGO_ENABLED=0
 
 ## help: Print this help message
 .PHONY: help

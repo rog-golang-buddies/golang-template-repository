@@ -1,4 +1,4 @@
-FROM golang:1.18.3-alpine3.16 as builder
+FROM golang:1.18-alpine as builder
 
 # install make
 RUN apk update && apk upgrade && \
@@ -21,7 +21,3 @@ USER 65532:65532
 
 # run the executable
 CMD ["/app"]
-
-# optionally expose a port
-ENV PORT=8000
-EXPOSE $PORT
