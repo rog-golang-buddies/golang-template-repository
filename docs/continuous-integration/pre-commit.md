@@ -23,7 +23,9 @@ Any detected failures will abort the commit.
 
     No configuration required.
 
-All hooks in `.pre-commit-config.yaml` will be executed via the pre-commit Github workflow in `.github/workflows/pre-commit.yml`.
+All hooks in `.pre-commit-config.yaml` will be executed via the automatic integration provided from [pre-commit ci](https://pre-commit.ci/).
+
+`pre-commit ci` runs automatically on pull request commits.
 
 ## Local setup
 
