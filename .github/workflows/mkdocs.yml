@@ -1,4 +1,4 @@
-name: gen-docs
+name: mkdocs
 on:
   push:
     branches:
