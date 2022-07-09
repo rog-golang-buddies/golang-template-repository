@@ -1,18 +1,15 @@
-name: Go-Test
+name: tests
 on:
   [pull_request, push, workflow_dispatch]
-
 jobs:
-
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Set up Go
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Go
       uses: actions/setup-go@v2
       with:
         go-version: 1.18
-
-    - name: Test
+    - name: Go Test
       run: go test -v ./...
