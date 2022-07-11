@@ -27,6 +27,14 @@ All hooks in `.pre-commit-config.yaml` will be executed via the automatic integr
 
 `pre-commit ci` runs automatically on pull request commits.
 
+### Auto fixing pull requests
+
+If tools (configured in `.pre-commit-config.yaml`) make changes to files during a pull request, pre-commit.ci will automatically fix the pull request.
+
+pre-commit.ci will run on all pull request commits, but will not push for commits made by bots.
+
+The impact of this means developers will need to fetch the latest changes if further work must be done on the PR branch.
+
 ## Local setup
 
 ```bash
