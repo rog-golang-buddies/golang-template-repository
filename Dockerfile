@@ -1,23 +1,23 @@
 FROM golang:1.18-alpine as builder
 
-# install make
+# Install make and bash
 RUN apk update && apk upgrade && \
-    apk add --no-cache make
+    apk add --no-cache make bash
 
 WORKDIR /src
 COPY . .
 
-# build executable
+# Build executable
 RUN make build
 
 # Using a distroless image from https://github.com/GoogleContainerTools/distroless
 FROM gcr.io/distroless/static:nonroot
 
-# copy executable from builder image to final images
-COPY --from=build /src/bin/app /
+# Copy executable from builder image to final images
+COPY --from=builder /src/bin/app /
 
-# numeric version of user nonroot:nonroot provided in image
+# Numeric version of user nonroot:nonroot provided in image
 USER 65532:65532
 
-# run the executable
+# Run the executable
 CMD ["/app"]
