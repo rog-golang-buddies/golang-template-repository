@@ -12,6 +12,13 @@ Fixes # (issue)
 - [ ] Draft
 - [ ] Trivial PR (nominal cosmetic/typo/whitespace changes)
 
+## Semantic Versioning
+Please delete options that are not relevant. Ensure same has been covered in the commit message as well.
+
+- This is a `fix` change
+- This is a `feat` change
+- This is a `BREAKING CHANGE`
+
 ## Type of change
 
 Please delete options that are not relevant.
@@ -34,7 +41,7 @@ _Please describe the tests that you ran to verify your changes. Provide instruct
 ### Manual
 
 ## Checklist:
-
+- [ ] My commit message mentions fix, feat, BREAKING CHANGE accordingly to increase the semantic versioning
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
