@@ -38,6 +38,10 @@ Provides the CI setup and local development instructions to optimally use this r
 
 2. Update `site_name` field in `./mkdocs.yml` file.
 
+### Quality of your code and vulnerability scanning [SonarCloud](continuous-integration/sonarcloud.md)
+
+Every time you open a PR and push a change SonarCloud will scan your code for vulnerabilities and code smells.
+
 ### Get template repository updates (optional)
 
 Setup an additional remote to periodically get latest template repository updates.
