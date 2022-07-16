@@ -24,7 +24,7 @@ You can check the file [here](https://github.com/rog-golang-buddies/golang-templ
 The workflow that will execute the process is .github/workflows/sonarcloud.yml which is located [here](https://github.com/rog-golang-buddies/golang-template-repository/blob/main/.github/workflows/sonarcloud.yml)
 !!! summary
 
-    PO will need to add a GITHUB token and a SonarCloud token in github secrets, the SonarCloud token is provided to you when register your repository in SonarCloud.
+    PO will need to add a GITHUB token and a SONAR_PROJECT_KEY name in github secrets, the SONAR_PROJECT_KEY is the key that sonarcloud provides you. Remember that SONAR_TOKEN is an organization variable, you do not need to add it.
 
 
 ![gh-secrets](img/gh-secrets.png)
