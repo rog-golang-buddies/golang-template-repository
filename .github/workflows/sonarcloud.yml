@@ -13,23 +13,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: check if projectkey is set
-        run: |
-          if [ -z "${SONAR_PROJECT_KEY}" ]; then
-            echo "Please, first of all set SONAR_PROJECT_KEY variable"
-            exit 1
-          else
-            if [ $(grep -q $SONAR_PROJECT_KEY sonar-project.properties ; echo $?) == 0 ]; then
-              echo "Variable SONAR_PROJECT_KEY is OK"
-            else
-              echo "Please, add your own sonar.projectKey in sonar-project.properties file"
-              exit 1
-            fi
-          fi
-        env:
-          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY}}
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+           args: >
+            -Dsonar.organization=rog-golang-buddies
+            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

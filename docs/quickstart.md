@@ -38,9 +38,9 @@ Provides the CI setup and local development instructions to optimally use this r
 
 2. Update `site_name` field in `./mkdocs.yml` file.
 
-### Quality of your code and vulnerability scanning [SonarCloud](continuous-integration/sonarcloud.md)
+### Setup project key for [SonarCloud](continuous-integration/sonarcloud.md)
 
-Every time you open a PR and push a change SonarCloud will scan your code for vulnerabilities and code smells.
+Add `SONAR_PROJECT_KEY` as a Github secret. This is the value you you typically set for `sonar.projectKey` property in the `sonar-project.properties` file.
 
 ### Get template repository updates (optional)
 
