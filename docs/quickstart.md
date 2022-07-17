@@ -40,7 +40,7 @@ Provides the CI setup and local development instructions to optimally use this r
 
 ### Setup project key for [SonarCloud](continuous-integration/sonarcloud.md)
 
-Add `SONAR_PROJECT_KEY` as a Github secret. This is the value you you typically set for `sonar.projectKey` property in the `sonar-project.properties` file.
+Add `SONAR_PROJECT_KEY` as a Github secret. This is the value you typically set for `sonar.projectKey` property in the `sonar-project.properties` file.
 
 ### Get template repository updates (optional)
 
