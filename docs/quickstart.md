@@ -38,6 +38,10 @@ Provides the CI setup and local development instructions to optimally use this r
 
 2. Update `site_name` field in `./mkdocs.yml` file.
 
+### Setup project key for [SonarCloud](continuous-integration/sonarcloud.md)
+
+Add `SONAR_PROJECT_KEY` as a Github secret. This is the value you typically set for `sonar.projectKey` property in the `sonar-project.properties` file.
+
 ### Get template repository updates (optional)
 
 Setup an additional remote to periodically get latest template repository updates.
