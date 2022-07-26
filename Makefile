@@ -1,5 +1,7 @@
 SHELL=/bin/bash -e -o pipefail
 PWD = $(shell pwd)
+GO_BUILD= go build
+GOFLAGS= CGO_ENABLED=0
 
 ## help: Print this help message
 .PHONY: help
@@ -37,4 +39,4 @@ fmt:
 ## build: Build binary into bin/ directory
 .PHONY: build
 build:
-	go build -ldflags="-w -s" -o bin/app ./...
+	$(GOFLAGS) $(GO_BUILD) -a -v -ldflags="-w -s" -o bin/app cmd/main.go
