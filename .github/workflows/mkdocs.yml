@@ -1,16 +1,19 @@
-name: gen-docs
+name: mkdocs
 on:
   push:
     branches:
-      - master
       - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material
-      - run: mkdocs gh-deploy --force
+      - name: Install mkdocs-material
+        run: pip install mkdocs-material
+      - name: Publish to gh-pages
+        run: mkdocs gh-deploy --force
