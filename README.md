@@ -64,4 +64,4 @@ _Show your appreciation to those who have contributed to the project._
 ## License
 
 _For open source projects, say how it is licensed._
-_Commonly used open-source licenses are MIT (https://opensource.org/licenses/MIT) and Apache (https://www.apache.org/licenses/LICENSE-2.0).
+_Commonly used open-source licenses are [MIT](https://opensource.org/licenses/MIT) and [Apache](https://www.apache.org/licenses/LICENSE-2.0)._
