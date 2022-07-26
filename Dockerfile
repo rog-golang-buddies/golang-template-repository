@@ -1,6 +1,5 @@
 FROM golang:1.18-alpine as builder
 
-# Install make and bash
 RUN apk update && apk upgrade && \
     apk add --no-cache make bash
 
