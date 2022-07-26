@@ -1,26 +1,22 @@
-name: Gitleaks
-
-on: [pull_request, push, workflow_dispatch]
-
+name: gitleaks
+on: [push]
 jobs:
   gitleaks:
-    name: Secret Scan
     runs-on: ubuntu-latest
     steps:
-          - name: Check out the repo
+          - name: Checkout
             uses: actions/checkout@v2
           - name: Run gitleaks
             run: docker run -v ${{ github.workspace }}:/path zricethezav/gitleaks:latest detect -v --source="/path"  --redact
-
   run-if-failed:
-    name: Github Security Report (if gitleaks job fails)
+    name: gen-report (if gitleaks fails)
     runs-on: ubuntu-latest
     needs: [gitleaks]
     if: always() && (needs.gitleaks.result == 'failure')
     permissions:
       security-events: write
     steps:
-    - name: Check out the repo
+    - name: Checkout
       uses: actions/checkout@v2
     - name: Generate gitleaks SARIF file
       # Exit 0 so we can get the failed report results from this step.
