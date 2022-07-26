@@ -21,7 +21,7 @@ The repository is preconfigured with a `./docs` directory and renders all markdo
 
 ### Github pages
 
-A gen-docs workflow is configured to automatically run on the `main` branch however it requires github-pages to be enabled in the repository settings.
+`mkdocs` is configured to automatically run on the `main` branch and is executed via the mkdocs Github workflow in `.github/workflows/mkdocs.yml`. However, it requires github-pages to be enabled in the repository settings.
 
 See the screenshot below:
 

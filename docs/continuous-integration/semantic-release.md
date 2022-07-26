@@ -4,7 +4,7 @@
 
 [semantic-release](https://github.com/semantic-release/semantic-release) automates the whole package release workflow including determining the next version number, generating the release notes, and publishing the package.
 
-semantic-release uses the commit messages to determine the consumer impact of changes in the codebase. Following formalized conventions for commit messages, `semantic-release` automatically determines the next semantic version number, generates a changelog and publishes the release.
+`semantic-release`  uses the commit messages to determine the consumer impact of changes in the codebase. Following formalized conventions for commit messages, `semantic-release` automatically determines the next semantic version number, generates a changelog and publishes the release.
 
 ## Why
 
@@ -53,9 +53,11 @@ For a base version of `0.1.0`, the following will apply:
 
     This section covers important implications of setting up a base tag/release version (or lack of) in your repo before using `semantic-release`.
 
+
+
 ### Base release version
 
-A semantic-release workflow is configured to run on the `main` branch and technically no further setup is required. However, the semantic-release initial version is set at `v1.0.0` (with pre-release options) instead of the generally accepted version `v0.1.0`. This may not be desirable for your project so a workaround is described below.
+`semantic-release` is configured to run on the `main` branch and is executed via the release Github workflow in `.github/workflows/release.yml`.  Technically, no further setup is required. However, the initial version is set at `v1.0.0` (with optional pre-release settings) instead of the generally accepted version `v0.1.0`. This may not be desirable for your project so a workaround is described below.
 
 !!! info
 
