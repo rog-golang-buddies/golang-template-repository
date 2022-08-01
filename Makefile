@@ -55,6 +55,3 @@ docker-run:
 ## docker: Builds and runs the docker image
 .PHONY: docker
 docker: docker-build docker-run
-
-
-
