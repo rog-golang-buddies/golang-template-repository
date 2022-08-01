@@ -8,13 +8,13 @@ A gh-pages site is automatically generated for you when you clone/fork this repo
 
 ### Steps
 
-🎛️  &nbsp; Configure gh-pages as per instructions [here](https://rog-golang-buddies.github.io/golang-template-repository/continuous-integration/mkdocs-material/#ci-setup).
+🎛️  &nbsp; Configure gh-pages as per instructions [here](docs/continuous-integration/mkdocs-material/#ci-setup).
 
 🌐 &nbsp; Goto your site at `<org>.github.io/<repository>` (the link is also made available via **Environments** section in your Github repo).
 
-✋ &nbsp; Take a moment to review the `Quickstart` guide before you get started. It has critical prerequisites.
+✋ &nbsp; Take a moment to review the [Quickstart guide](docs/quickstart.md) guide before you get started. It has critical prerequisites.
 
-🧐 &nbsp; Peruse the `Continuous integration` docs to get yourself upto speed.
+🧐 &nbsp; Peruse the [continuous integration docs](docs/continuous-integratino) to get yourself upto speed.
 
 > _Having trouble accessing your site? Access the template repository Quickstart and Continuous integration docs here_: <br>
   https://rog-golang-buddies.github.io/golang-template-repository
