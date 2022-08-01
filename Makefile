@@ -2,6 +2,7 @@ SHELL=/bin/bash -e -o pipefail
 PWD = $(shell pwd)
 GO_BUILD= go build
 GOFLAGS= CGO_ENABLED=0
+REGISTRY_IMAGE_NAME=golang_app
 
 ## help: Print this help message
 .PHONY: help
@@ -40,3 +41,20 @@ fmt:
 .PHONY: build
 build:
 	$(GOFLAGS) $(GO_BUILD) -a -v -ldflags="-w -s" -o bin/app cmd/main.go
+
+## docker-build: Builds a docker image
+.PHONY: docker-build
+docker-build:
+	docker build . -t $(REGISTRY_IMAGE_NAME)
+
+## docker-run: Runs the docker image built by make docker-build
+.PHONY: docker-run
+docker-run:
+	docker run $(REGISTRY_IMAGE_NAME)
+
+## docker: Builds and runs the docker image
+.PHONY: docker
+docker: docker-build docker-run
+
+
+
