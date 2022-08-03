@@ -42,17 +42,17 @@ fmt:
 build:
 	$(GOFLAGS) $(GO_BUILD) -a -v -ldflags="-w -s" -o bin/app cmd/main.go
 
-## docker-build: Builds a docker image
+## docker-build: Build a docker image
 .PHONY: docker-build
 docker-build:
 	docker build . -t $(REGISTRY_IMAGE_NAME)
 
-## docker-run: Runs the docker image built by make docker-build
+## docker-run: Run the docker image built via `make docker-build`
 .PHONY: docker-run
 docker-run:
-	docker run $(REGISTRY_IMAGE_NAME)
+	docker run --rm $(DOCKER_REPO)
 
-## docker: Builds and runs the docker image
+## docker: Build and runs the docker image
 .PHONY: docker
 docker: docker-build docker-run
 
