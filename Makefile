@@ -2,7 +2,8 @@ SHELL=/bin/bash -e -o pipefail
 PWD = $(shell pwd)
 GO_BUILD= go build
 GOFLAGS= CGO_ENABLED=0
-REGISTRY_IMAGE_NAME=golang_app
+DOCKER_REPO=rog-golang-buddies/template
+DOCKER_TAG=latest
 
 ## help: Print this help message
 .PHONY: help
@@ -45,7 +46,7 @@ build:
 ## docker-build: Build a docker image
 .PHONY: docker-build
 docker-build:
-	docker build . -t $(REGISTRY_IMAGE_NAME)
+	docker build . -t $(DOCKER_REPO):$(DOCKER_TAG)
 
 ## docker-run: Run the docker image built via `make docker-build`
 .PHONY: docker-run
