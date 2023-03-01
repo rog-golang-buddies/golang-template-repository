@@ -1,0 +1,13 @@
+README.md
+docs/
+mkdocs.yml
+.git/
+.gitignore
+.github/
+.editorconfig
+.goreleaser.yaml
+.pre-commit-config.yaml
+.releaserc
+.dockerignore
+LICENSE
+Dockerfile
